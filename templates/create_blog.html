@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container-fluid">
+
+    <div class="row">
+        <div class= "col-6">
+            <div class="card" id="form">
+            {% if errors %} {{errors}} {% endif %}
+            <form
+            method= "post"
+            hx-post= "{% url 'create' %}"
+            hx-target = "#content"
+            >
+            {{form|crispy}}
+                <button class="btn"> Submit </button>
+            </form>
+            </div>
+        </div>
+
+        <div class= "col-6">
+            <div class="card" id="preview">
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}

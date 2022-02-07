@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %} {{blog.title}} {% endblock title %}
+{% block content %}
+<div class="container-fluid">
+
+    <div class="card w-lg-half w-full mx-auto">
+        <h2 class= "card-title">{{title}} </h2>
+        {{content|safe}}
+
+    </div>
+
+</div>
+
+{% endblock content %}
